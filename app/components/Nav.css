@@ -1,0 +1,45 @@
+.nav {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+input {
+  width: 100%;
+  background-color: transparent;
+  outline: 1px solid white;
+  border: none;
+  color: white;
+  padding: 10px;
+}
+
+input:focus {
+  outline: 2px solid white;
+}
+
+input::placeholder {
+  color: #ffffffba;
+  text-transform: capitalize;
+  font-size: 8pt;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
