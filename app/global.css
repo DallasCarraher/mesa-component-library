@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  font-size: 14px;
   height: 100vh;
   margin: 0;
 }
@@ -8,4 +9,17 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 3fr 7fr;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 2px dashed white;
+  outline-offset: 4px;
+}
+
+a:active {
+  outline: none;
 }
