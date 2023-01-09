@@ -1,11 +1,18 @@
-body {
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: 100;
-  letter-spacing: 2px;
+:root {
+  --mds-background: #ffffffba;
+  --mds-foreground: #000000aa;
+  --mds-primary: #00a2ff;
+  --mds-secondary: #ff9a00;
+}
 
+body {
   height: 100vh;
   margin: 0;
+
+  font-family: sans-serif;
+  font-size: 10pt;
+  font-weight: 100;
+  letter-spacing: 2px;
 }
 
 .layout {
@@ -15,7 +22,11 @@ body {
 }
 
 .home {
-  background: linear-gradient(to right, #ffffffba, #00000045);
+  background: linear-gradient(
+    to right,
+    var(--mds-background),
+    var(--mds-foreground)
+  );
 }
 
 a:hover {
@@ -23,8 +34,8 @@ a:hover {
 }
 
 a:focus {
-  outline: 2px dashed white;
-  outline-offset: 4px;
+  outline: none;
+  border-bottom: 1px solid var(--mds-primary);
 }
 
 a:active {

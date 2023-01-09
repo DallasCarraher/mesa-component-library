@@ -8,12 +8,13 @@
   position: relative;
 }
 
-pre {
+.slash-hint {
   position: absolute;
   top: 10px;
   right: 20px;
-  font-size: 10pt;
-  margin: 0;
+  color: var(--mds-background);
+  font-size: 9pt;
+  letter-spacing: 2px;
 }
 
 input {
@@ -22,18 +23,18 @@ input {
   outline: 1px solid white;
   border: none;
   color: white;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   padding: 10px;
 }
 
 input:focus {
-  outline: 2px solid white;
+  outline: 1px solid var(--mds-primary);
 }
 
 input::placeholder {
-  color: #ffffffba;
-  text-transform: capitalize;
-  font-size: 8pt;
+  color: var(--mds-background);
+  font-size: 9pt;
+  letter-spacing: 2px;
 }
 
 nav {
@@ -55,6 +56,18 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+h1 a {
+  text-decoration: none;
+  color: white;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+h1 a:focus {
+  outline: none;
+  /* border: none; */
 }
 
 h1 a:hover {
@@ -82,7 +95,7 @@ h1 {
   letter-spacing: 2px;
   color: #ffffffba;
   user-select: none;
-  margin-top: -8px;
+  /* margin-top: -4px; */
 }
 
 li {

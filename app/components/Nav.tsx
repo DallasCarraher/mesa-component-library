@@ -13,7 +13,7 @@ export function links() {
 export const Nav = () => {
   const searchRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
-  const [placeholder, setPlaceholder] = useState("search");
+  const [placeholder, setPlaceholder] = useState("Search");
 
   const searchOnForwardSlash = useCallback((e: KeyboardEvent) => {
     if (e.key === "/") {
@@ -44,10 +44,12 @@ export const Nav = () => {
           aria-label="search"
           value={search}
           onFocus={() => setPlaceholder("Type to search components")}
-          onBlur={() => setPlaceholder("search")}
+          onBlur={() => setPlaceholder("Search")}
           onChange={handleChange}
         />
-        {placeholder === "search" && <pre>/</pre>}
+        {placeholder === "Search" && (
+          <span className="slash-hint">press '/'</span>
+        )}
       </div>
       <nav>
         <ul>
