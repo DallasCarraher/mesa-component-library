@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+.layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+}
