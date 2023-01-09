@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from "react";
 import { COMPONENTS } from "./constants";
 import { useEventListener } from "~/hooks/useEventListener";
 import { Icon } from "./Icon/Icon";
-import removeOutline from "~/assets/icons/walk-sharp.svg";
+import walkSharp from "~/assets/icons/walk-sharp.svg";
 
 import styles from "./Nav.css";
 export function links() {
@@ -32,20 +32,23 @@ export const Nav = () => {
       <div className="title">
         <h1>
           <a href="/">Mesa</a>
-          <Icon svg={removeOutline} height={30} invert />
+          <Icon svg={walkSharp} height={30} invert />
         </h1>
-        <span className="subtitle">a dead-simple component library</span>
+        <span className="subtitle">a component library & design system</span>
       </div>
-      <input
-        ref={searchRef}
-        type="search"
-        placeholder={placeholder}
-        aria-label="search"
-        value={search}
-        onFocus={() => setPlaceholder("Type to search components")}
-        onBlur={() => setPlaceholder("search")}
-        onChange={handleChange}
-      />
+      <div className="search-container">
+        <input
+          ref={searchRef}
+          type="search"
+          placeholder={placeholder}
+          aria-label="search"
+          value={search}
+          onFocus={() => setPlaceholder("Type to search components")}
+          onBlur={() => setPlaceholder("search")}
+          onChange={handleChange}
+        />
+        {placeholder === "search" && <pre>/</pre>}
+      </div>
       <nav>
         <ul>
           {COMPONENTS.filter((link) => link.includes(search)).map(

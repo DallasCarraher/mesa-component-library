@@ -1,1 +1,1 @@
-export const COMPONENTS = ["Button"];
+export const COMPONENTS = ["button"];
