@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <div className="layout">
       <Nav />
-      <div>content</div>
+      <div className="home"></div>
     </div>
   );
 }
