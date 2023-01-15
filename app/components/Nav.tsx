@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { COMPONENTS } from "./constants";
 import { useEventListener } from "~/hooks/useEventListener";
@@ -14,6 +14,11 @@ export const Nav = () => {
   const searchRef = useRef<HTMLInputElement>(null);
   const [search, setSearch] = useState("");
   const [placeholder, setPlaceholder] = useState("Search");
+  const [active, setActive] = useState<string | null>(null);
+
+  useEffect(() => {
+    setActive(window.location.pathname.replace("/", ""));
+  }, []);
 
   const searchOnForwardSlash = useCallback((e: KeyboardEvent) => {
     if (e.key === "/") {
@@ -53,10 +58,20 @@ export const Nav = () => {
       </div>
       <nav>
         <ul>
-          {COMPONENTS.filter((link) => link.includes(search)).map(
+          <li>
+            <a href="/" className={active === "" ? "active" : undefined}>
+              Overview
+            </a>
+          </li>
+          {COMPONENTS.filter((link) => link.match(RegExp(search, "g"))).map(
             (link, idx) => (
               <li key={`${link}-${idx}`}>
-                <a href={`/${link}`}>{link}</a>
+                <a
+                  href={`/${link}`}
+                  className={active === link ? "active" : undefined}
+                >
+                  .{link}
+                </a>
               </li>
             )
           )}

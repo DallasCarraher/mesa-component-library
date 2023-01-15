@@ -1,0 +1,24 @@
+.home {
+  background: black;
+}
+
+.home h2 {
+  width: fit-content;
+  background-color: black;
+  color: white;
+  outline: 1px solid white;
+  padding: 8px;
+  letter-spacing: 1px;
+}
+
+.home p {
+  width: 64ch;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  line-height: 20px;
+  background-color: black;
+  outline: 1px solid white;
+  color: white;
+  padding: 8px;
+}

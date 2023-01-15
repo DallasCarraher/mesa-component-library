@@ -1,8 +1,13 @@
 :root {
   --mds-background: #ffffffba;
-  --mds-foreground: #000000aa;
+  --mds-foreground: #000000ce;
   --mds-primary: #00a2ff;
   --mds-secondary: #ff9a00;
+}
+
+::selection {
+  background-color: var(--mds-secondary);
+  color: black;
 }
 
 body {
@@ -19,6 +24,7 @@ body {
   height: 100%;
   display: grid;
   grid-template-columns: 340px auto;
+  overflow-y: hidden;
 }
 
 .home {
@@ -27,10 +33,9 @@ body {
     var(--mds-background),
     var(--mds-foreground)
   );
-}
-
-a:hover {
-  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 a:focus {
